@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         linkEnter.merge(link).transition()
             .duration(duration)
-            .attr("d", diagonal);
+            .attr("d", d => diagonal({ source: d.parent, target: d }));
 
         link.exit().transition()
             .duration(duration)
