@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Schema Visualizer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        .node circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+
+        .node text {
+            font: 12px sans-serif;
+        }
+
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+        #messageArea {
+            margin-top: 10px;
+            color: red;
+        }
+        #chartContainer {
+            width: 100%;
+            overflow: auto; /* Allows scrolling for large diagrams */
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h1>JSON Schema Visualizer</h1>
+        <p>Upload your JSON schema file to visualize it as a collapsible tree.</p>
+        <input type="file" id="schemaFile" accept=".json">
+        <div id="messageArea"></div>
+    </div>
+    <div id="chartContainer">
+        <svg width="960" height="600"></svg>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
